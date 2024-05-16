@@ -14,15 +14,17 @@ export class ArticlesListComponent {
       price: 1250,
       stock: 0,
       image: "assets/img/granade.jpg",
-      clearance: false
+      clearance: false,
+      quantity:0
     },
     {
       name: "Botiquin",
       type: "Primeros auxilios",
-      price: 50000,
-      stock: 24990,
+      price: 500,
+      stock: 20,
       image: "assets/img/botiquin.jpg",
-      clearance: true
+      clearance: true,
+      quantity:0
     },
     {
       name: "Antidoto",
@@ -30,17 +32,30 @@ export class ArticlesListComponent {
       price: 10000,
       stock: 0,
       image: "assets/img/antidoto.jpg",
-      clearance:false
+      clearance:false,
+      quantity:0
     },
     {
       name: "Bengalas x2",
       type: "Primeros auxilios",
-      price: 910,
-      stock: 500,
+      price: 91000,
+      stock: 5,
       image: "assets/img/bengala.jpg",
-      clearance: false
+      clearance: false,
+      quantity:0
     }
   ];
-
+  
+  upQuantity(article: Article): void{
+    if(article.quantity < article.stock)
+      article.quantity++;
+  }
+  downQuantity(article: Article): void{
+    if(article.quantity > 0)
+      article.quantity--;
+  }
+  changeQuantity(article: Article, event: any):void{
+    event.preventDefault();
+  }
 
 }

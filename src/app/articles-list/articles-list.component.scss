@@ -1,11 +1,19 @@
-img {
-    width: 150px;
+img{
+    width: 100px;
 }
 .badge{
     background-color: rgb(245, 176, 0);
     color: black;
 }
 .clearance{
-    border: 2px solid #34f134;
-    background-color: rgb(89, 255, 89);
+    background-color:  #6aff6a;
+}
+input{
+    width:30px;
+}
+.form-group{
+    display: flex;
+}
+td{
+    vertical-align: middle;
 }
