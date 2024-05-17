@@ -6,7 +6,12 @@ import { Article } from './Article';
   templateUrl: './articles-list.component.html',
   styleUrl: './articles-list.component.scss'
 })
-export class ArticlesListComponent {
+export class ArticlesListComponent implements OnInit {
+  constructor (){}
+
+  ngOnInit(): void {
+  }
+
   articles: Article[] = [
     {
       name: "Granada",
@@ -45,17 +50,8 @@ export class ArticlesListComponent {
       quantity:0
     }
   ];
-  
-  upQuantity(article: Article): void{
-    if(article.quantity < article.stock)
-      article.quantity++;
-  }
-  downQuantity(article: Article): void{
-    if(article.quantity > 0)
-      article.quantity--;
-  }
-  changeQuantity(article: Article, event: any):void{
-    event.preventDefault();
-  }
 
+  maxReached(msg: String){
+    console.log(msg);
+  }
 }

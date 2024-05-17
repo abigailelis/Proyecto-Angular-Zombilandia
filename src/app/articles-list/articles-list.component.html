@@ -15,13 +15,10 @@
             <td>{{article.name}}</td>
             <td>{{article.type}}</td>
             <td>{{article.price | currency}}</td>
-            <td><span class="badge text-bg-warning" *ngIf="article.stock==0">Sin stock</span></td>
+            <td><span class="badge" *ngIf="article.stock==0">Sin stock</span></td>
             <td>
-                <div class="form-group">
-                    <button type="button" class="btn btn-secondary btn-sm" (click)="downQuantity(article)">-</button>
-                    <input type="text" class="text-center" [(ngModel)]="article.quantity" (keyup)="changeQuantity(article, $event)">
-                    <button type="button" class="btn btn-secondary btn-sm" (click)="upQuantity(article)">+</button>
-                </div>
+                <app-input-integer [(quantity)]="article.quantity" [max]="article.stock" *ngIf="article.stock" (maxReached)="maxReached($event)">
+                </app-input-integer>
             </td>
         </tr>
     </tbody>
