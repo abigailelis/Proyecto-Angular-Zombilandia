@@ -1,3 +1,4 @@
+<h1>Lista de articulos</h1>
 <table class="table text-center">
     <thead>
         <tr>
@@ -6,7 +7,8 @@
             <th scope="col">Tipo</th>
             <th scope="col">Precio</th>
             <th scope="col">Stock</th>
-            <th scope="col">Agregar</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Comprar</th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +21,9 @@
             <td>
                 <app-input-integer [(quantity)]="article.quantity" [max]="article.stock" *ngIf="article.stock" (maxReached)="maxReached($event)">
                 </app-input-integer>
+            </td>
+            <td>
+                <button type="button" class="btn btn-success" (click)="addToCart(article)">Comprar</button>
             </td>
         </tr>
     </tbody>
