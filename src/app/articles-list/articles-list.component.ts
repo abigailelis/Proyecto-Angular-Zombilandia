@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from './Article';
-import { ArticleCartService } from '../article-cart.service';
+import { ArticleCartService } from '../services/article-cart.service';
+import { ArticleDataService } from '../services/article-data.service';
 
 @Component({
   selector: 'app-articles-list',
@@ -9,52 +10,19 @@ import { ArticleCartService } from '../article-cart.service';
 })
 export class ArticlesListComponent implements OnInit {
 
-  constructor (private cart: ArticleCartService){}
+  articles: Article[] = [];
+
+  constructor (
+    private cart: ArticleCartService,
+    private articlesDataService: ArticleDataService){}
 
   ngOnInit(): void {
+    this.articlesDataService.getAll()
+      .subscribe(articles => this.articles = articles);
   }
 
-  articles: Article[] = [
-    {
-      name: "Granada",
-      type: "Arma",
-      price: 1250,
-      stock: 0,
-      image: "assets/img/granade.jpg",
-      clearance: false,
-      quantity:0
-    },
-    {
-      name: "Botiquin",
-      type: "Primeros auxilios",
-      price: 500,
-      stock: 20,
-      image: "assets/img/botiquin.jpg",
-      clearance: true,
-      quantity:0
-    },
-    {
-      name: "Antidoto",
-      type: "Primeros auxilios",
-      price: 10000,
-      stock: 0,
-      image: "assets/img/antidoto.jpg",
-      clearance:false,
-      quantity:0
-    },
-    {
-      name: "Bengalas x2",
-      type: "Primeros auxilios",
-      price: 91000,
-      stock: 5,
-      image: "assets/img/bengala.jpg",
-      clearance: false,
-      quantity:0
-    }
-  ];
-
   maxReached(msg: String){
-    console.log(msg);
+    alert(msg);
   }
 
   addToCart(article: Article): void{

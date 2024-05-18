@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from './articles-list/Article';
+import { Article } from '../articles-list/Article';
 import { BehaviorSubject, Observable } from 'rxjs';
 /**
  * Maneja la lógica del carrito

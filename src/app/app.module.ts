@@ -9,6 +9,7 @@ import { ZombilandiaAboutComponent } from './zombilandia-about/zombilandia-about
 import { ZombilandiaArticlesComponent } from './zombilandia-articles/zombilandia-articles.component';
 import { CartComponent } from './cart/cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component'
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideClientHydration()
