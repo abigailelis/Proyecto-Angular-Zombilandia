@@ -1,14 +1,13 @@
 nav{
     height: 80px;
 }
-.container{
-    padding: 1.5rem;
+.container-fluid{
+    padding: 1rem 3.5rem 1rem 3.5rem;
 }
-footer{
-    height: 40px;
-    line-height: 40px;
-    color: rgb(215, 215, 215);
-    width: 100%;
-    position: fixed;
-    bottom: 0;
+.container{
+    padding-top: 2rem;
+}
+a.title{
+    color: #f6b73c;
+    font-size:x-large;
 }

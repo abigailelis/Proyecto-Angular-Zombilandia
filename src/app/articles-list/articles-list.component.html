@@ -1,30 +1,41 @@
-<h1>Lista de articulos</h1>
-<table class="table text-center">
-    <thead>
-        <tr>
-            <th scope="col">Imágen</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Tipo</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Stock</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Comprar</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let article of articles" [ngClass]="{'clearance': article.clearance}">
-            <td><img class="img-thumbnail" [src]="article.image" [alt]="article.name"></td>
-            <td>{{article.name}}</td>
-            <td>{{article.type}}</td>
-            <td>{{article.price | currency}}</td>
-            <td><span class="badge" *ngIf="article.stock==0">Sin stock</span></td>
-            <td>
-                <app-input-integer [(quantity)]="article.quantity" [max]="article.stock" *ngIf="article.stock" (maxReached)="maxReached($event)">
-                </app-input-integer>
-            </td>
-            <td>
-                <button type="button" class="btn btn-success" (click)="addToCart(article)">Comprar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container-fluid">
+    <h1>Lista de articulos</h1>
+    <div class="row justify-content-between">
+        <div class="card" *ngFor="let article of articles" [ngClass]="{'clearance': article.clearance}">
+            <div [ngClass]="{'ribbon-wrap': article.clearance}">
+                <div [ngClass]="{'ribbon': article.clearance}"></div>
+            </div>
+            <div class="card-img">
+                <div class="img"><img class="img-thumbnail" [src]="article.image" [alt]="article.name"></div>
+            </div>
+            <div class="card-title">{{article.name}}</div>
+            <div class="card-price"><span>{{article.price | currency: '$' : 'symbol' : '3.0'}}</span></div>
+            <div class="card-subtitle">{{article.type}}</div>
+            <div class="card-footer">
+                <span class="badge" *ngIf="article.stock==0">Sin stock</span>
+                <div>
+                    <app-input-integer [(quantity)]="article.quantity" [max]="article.stock" *ngIf="article.stock"
+                        (maxReached)="maxReached($event)">
+                    </app-input-integer>
+                </div>
+                <div>
+                    <button *ngIf="article.stock > 0" class="card-btn" (click)="addToCart(article)"><svg
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z">
+                            </path>
+                            <path
+                                d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z">
+                            </path>
+                            <path
+                                d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z">
+                            </path>
+                            <path
+                                d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z">
+                            </path>
+                        </svg></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

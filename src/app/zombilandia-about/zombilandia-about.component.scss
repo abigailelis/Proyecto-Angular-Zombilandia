@@ -1,4 +1,40 @@
-.container-fluid{
-    padding: 1.5rem;
-    display:flex;
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+}
+.card {
+    padding: 10px;
+    width: 400px;
+    min-height: 370px;
+    border-radius: 20px;
+    background: #e8e8e8;
+    box-shadow: 5px 5px 6px #dadada,
+        -5px -5px 6px #f6f6f6;
+    transition: 0.4s;
+}
+
+img{
+    border-radius: 25px;
+    width:100%;
+    min-height: fit-content;
+}
+
+.card-body {
+    margin: 0px 10px 10px 10px;
+    color: rgb(31, 31, 31);
+    font-size: 15px;
+}
+
+.footer {
+    float: right;
+    margin: 20px 0 0 20px;
+    font-size: 13px;
+    color: #636363;
+}
+
+.by-name {
+    font-weight: 700;
 }

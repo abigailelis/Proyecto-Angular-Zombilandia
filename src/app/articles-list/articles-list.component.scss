@@ -1,13 +1,142 @@
-img{
-    width: 100px;
+.badge {
+  background-color: rgb(245, 176, 0);
+  color: black;
+  width: 100%;
+  padding: 15px 0;
 }
-.badge{
-    background-color: rgb(245, 176, 0);
-    color: black;
+h1{
+  margin-bottom: 1rem;
 }
-.clearance{
-    background-color:  #6aff6a;
+.card.clearance {
+  border-image: linear-gradient(#f6b73c, #4d9f0c) 30;
+  border-width: 4px;
+  border-style: solid;
+  overflow: hidden;
 }
-td{
-    vertical-align: middle;
+
+.card:hover {
+  transform: scale(1.02);
+  transition: all 0.7s;
+}
+.ribbon-wrap {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  pointer-events: none;
+}
+
+.ribbon::before{
+  content:'Oferta especial';
+  width: 150px;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 4px 0;
+  background: linear-gradient(45deg, #f6b73c, #4d9f0c);
+  box-shadow: 1px 1px 12px #888484;
+  color: #fff;
+  position: absolute;
+  transform: rotate(45deg);
+  left: -10px;
+  top: 55%;
+}
+
+.img-thumbnail {
+  border: none;
+}
+
+.card {
+  --font-color: #323232;
+  --font-color-sub: #666;
+  --bg-color: #fff;
+  --main-color: #323232;
+  --main-focus: #2d8cf0;
+  width: 180px;
+  height: 400px;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0px 0px 15px 5px;
+}
+
+.card:last-child {
+  justify-content: space-between;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 450;
+  text-align: center;
+  margin: 0;
+  color: var(--font-color);
+}
+
+.card-subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--font-color-sub);
+}
+
+.card-divider {
+  width: 100%;
+  border: 1px solid var(--main-color);
+  border-radius: 50px;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.card-price {
+  text-align: center;
+}
+
+.card-price span {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--font-color);
+}
+
+.card-btn {
+  height: 32px;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  padding: 0 8px;
+  transition: all 0.3s;
+}
+
+.card-btn:hover {
+  border: 2px solid var(--main-focus);
+}
+
+.card-btn:active {
+  transform: translateY(3px);
+}
+
+.card-btn svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--main-color);
+  transition: all 0.3s;
+}
+
+.card-btn:hover svg {
+  fill: var(--main-focus);
 }

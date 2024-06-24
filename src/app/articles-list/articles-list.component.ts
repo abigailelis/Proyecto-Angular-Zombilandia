@@ -25,9 +25,10 @@ export class ArticlesListComponent implements OnInit {
     alert(msg);
   }
 
-  addToCart(article: Article): void{
+  addToCart(article: Article){
     this.cart.addToCart(article);
     article.stock -= article.quantity;
     article.quantity = 0;
   }
+
 }

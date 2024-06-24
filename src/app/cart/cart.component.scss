@@ -1,0 +1,116 @@
+h2 {
+    font-size: 22px;
+}
+
+.card-body {
+    padding-left: 1px;
+    padding-right: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-body::after {
+    height: fit-content;
+}
+
+svg {
+    padding: 0;
+    width: 100%;
+}
+
+.img-thumbnail {
+    border: none;
+}
+
+.container {
+    margin-top: 20%;
+    padding: 0;
+}
+
+table {
+    color: rgb(85, 84, 84);
+}
+
+tr {
+    border: hidden;
+}
+
+tr.head-cart th {
+    font-weight: normal;
+    color: rgb(42, 68, 68);
+}
+
+td,
+th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(42, 68, 68);
+}
+
+.total-price div{
+    padding: 1px;
+}
+
+.btn-buy {
+    align-self: center;
+}
+
+.Btn {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    border: none;
+    color: white;
+    font-weight: 600;
+    gap: 8px;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    margin-top: 25px;
+}
+
+.svgIcon {
+    width: 16px;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.Btn::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: white;
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%, -50%);
+    border-radius: 0;
+}
+
+.Btn:active {
+    transform: translate(5px, 5px);
+    transition-duration: .3s;
+}

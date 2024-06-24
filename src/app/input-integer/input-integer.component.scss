@@ -1,6 +1,29 @@
-input{
-    width:30px;
+input {
+    font-size: 19px;
+    width: 30px;
+    border: none;
+    background-color:inherit;
 }
-.form-group{
+
+.form-group {
     display: flex;
+}
+
+.change-quantity {
+    color: #2f2e2e;
+    padding: 0 .5em;
+    font-size: 18px;
+    height: 32px;
+    width: 32px;
+    border-radius: 0.5em;
+    background: #d7d6d6;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+    box-shadow: inset -2px 2px 12px #c5c5c5, -6px -6px 12px #ffffff;
+}
+
+.change-quantity:active {
+    color: #a09d9d;
+    box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
 }
